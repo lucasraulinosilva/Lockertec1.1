@@ -6,10 +6,9 @@
     if ( isset($_SESSION['RM']) && isset($_SESSION['senha']) && $_SESSION['RM'] != '' && $_SESSION['senha'] != '') {
         
     } else {
-        header('location:index.php?view=login');
+        header('https://lockertec.azurewebsites.net/?view=login');
     }
 
-    header('location:index.php?view=login');
 
 ?>
 
