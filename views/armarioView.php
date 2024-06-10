@@ -2,7 +2,6 @@
 
 <?php 
 
-/*
 
     if ( isset($_SESSION['RM']) && isset($_SESSION['senha']) && $_SESSION['RM'] != '' && $_SESSION['senha'] != '') {
         
@@ -11,8 +10,6 @@
     }
 
     header('location:index.php?view=login');
-
-    */
 
 ?>
 
