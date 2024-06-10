@@ -29,7 +29,7 @@ if (isset($_GET['rm']) && isset($_GET['senha'])) {
         <div class="row">
             <div class="">
                 <h2>Realize seu login</h2>
-                <form action="index.php" method="GET">
+                <form action="https://lockertec.azurewebsites.net/?view=loginAlunoForm" method="GET">
                     <input type="hidden" name="view" value="loginAlunoForm">
                     <div class="form-floating mb-3">
                         <input type="text" class="form-control" id="rm" placeholder="Digite seu RM" name="rm">
