@@ -1,6 +1,15 @@
 <?php 
 include_once('public/cabecalho.php'); 
 require_once('controllers/alunoController.php'); 
+$aluno = new AlunoController();
+
+if (isset($_GET['rm']) && isset($_GET['senha'])) {
+    if ($aluno -> AutenticarLogin($_GET['rm'], $_GET['senha']) == 'certo' ) {
+        header('Location: https://lockertec.azurewebsites.net/?view=homeAluno'); 
+        exit;   
+    } 
+}
+
 ?> 
 
 <title>Login | Lockertec</title>
@@ -33,9 +42,7 @@ require_once('controllers/alunoController.php');
                                 <div class="alert alert-danger mt-2" role="alert">
                                     RM ou Senha inválidos.
                                 </div>';
-                            } else {
-                                header('Location: https://lockertec.azurewebsites.net/?view=homeAluno'); 
-                            }
+                            } 
                         }
                     ?>
                     <a href="index.php?view=cadastro" style="display: block; margin-top: 10px;">Eu não tenho uma conta</a>
