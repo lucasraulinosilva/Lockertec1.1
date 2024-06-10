@@ -1,0 +1,29 @@
+@media (max-width: 768px) { 
+
+    .slogan {
+        margin: 0 auto;
+        width: 100%;
+        height: 200px;
+        margin-top: 200px;
+    }
+
+    .slogan h1 {
+        font-family: 'Ubuntu', sans-serif;
+        text-align: center;
+        font-size: 50px;
+    }
+
+    .slogan h3 {
+        font-family: 'Mulish', sans-serif;
+        text-align: center;
+        font-size: 30px;
+    }
+
+    .vantagens {
+        margin-top: 100px;
+        margin-bottom: 150px;
+        width: 90%;
+        height: 350px;
+    }
+    
+}

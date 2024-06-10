@@ -1,0 +1,1 @@
+$('#icone').attr('src', 'img/icone2.png');

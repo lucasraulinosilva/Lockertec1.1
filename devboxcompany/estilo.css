@@ -1,0 +1,151 @@
+body,h1,h2,h3,h4,h5,h6 {
+    font-family: "Raleway", sans-serif
+}
+
+body, html {
+    height: 100%;
+    line-height: 1.8;
+}
+
+/* Full height image header */
+.bgimg-1 {
+    background-position: center; 
+    background-size: cover;
+    background-image: url("mac.jpg");
+    min-height: 100%;
+}
+
+.w3-bar .w3-button {
+    padding: 16px;
+}
+
+#home{
+    background-image: url("img/newimg.jpg");
+}
+
+#mapa{
+    width: 100%;
+}
+
+.package:hover{
+    transform: scale(1.04);
+    box-shadow: 2.5px 2.5px 7.5px rgba(0,0,0,0.6);
+}
+
+.package{
+    transition: 0.5s ease;
+    cursor: pointer;
+    
+}
+
+.letreiro{
+    text-shadow: 5px 5px 7px black !important;
+    color: mintcream;
+    font-family: 'Chivo', sans-serif;
+}
+
+.letreiroSemSombra{
+    font-family: 'Chivo', sans-serif;
+}
+/* 
+.letreiro:hover{
+    textsi
+} */
+
+.backgroundCinza{
+    background-color: rgb(133, 130, 142);
+}
+
+.chivo{
+    font-family: 'Chivo', sans-serif;
+}
+
+/* Projects section */
+#projects .projects {
+	flex-direction: column;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 100px 0;
+}
+#projects .projects-header h1 {
+	margin-bottom: 50px;
+}
+#projects .all-projects {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+#projects .project-item {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	width: 80%;
+	margin: 20px auto;
+	overflow: hidden;
+	border-radius: 10px;
+}
+#projects .project-info {
+	padding: 30px;
+	flex-basis: 50%;
+	height: 100%;
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	flex-direction: column;
+	/*background-color: gray;*/
+	color: white;
+}
+#projects .project-info h1 {
+	font-size: 4rem;
+	font-weight: 500;
+}
+#projects .project-info h2 {
+	font-size: 1.8rem;
+	font-weight: 500;
+	margin-top: 10px;
+}
+#projects .project-info p {
+	color: white;
+}
+#projects .project-img {
+	flex-basis: 50%;
+	height: 300px;
+	overflow: hidden;
+	position: relative;
+}
+#projects .project-img:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	opacity: 0.7;
+}
+#projects .project-img img {
+	transition: 0.3s ease transform;
+}
+#projects .project-item:hover .project-img img {
+	transform: scale(1.1);
+}
+/* End Projects section */
+
+.sombraVermelha:hover{
+	box-shadow: 5px 10px 15px #4a97ff;
+}
+
+body::-webkit-scrollbar {
+	width: 12px;               /* width of the entire scrollbar */
+  }
+  
+  body::-webkit-scrollbar-track {
+	background-color: white;        /* color of the tracking area */
+  }
+  
+  body::-webkit-scrollbar-thumb {
+	background-color: #4a97ff;    /* color of the scroll thumb */
+	/* border-radius: 20px;       roundness of the scroll thumb */
+	/* border: 3px solid orange;  creates padding around scroll thumb */
+  }
