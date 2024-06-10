@@ -1,11 +1,11 @@
 <?php
-header('Location: https://www.google.com/');
+header('Location: https://lockertec.azurewebsites.net/?view=login');
 exit;
 ?>
 
 <?php  include_once ('public/cabecalho.php'); ?>
 
-<?php header('Location: https://lockertec.azurewebsites.net/?view=login');
+<?php
 
 /*if ( isset($_SESSION['RM']) && isset($_SESSION['senha']) && $_SESSION['RM'] != '' && $_SESSION['senha'] != '') {
     
