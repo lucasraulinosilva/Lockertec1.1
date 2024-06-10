@@ -1,5 +1,15 @@
-<?php include_once('public/cabecalho.php'); ?>
-<?php require_once('controllers/alunoController.php'); ?> 
+<?php 
+include_once('public/cabecalho.php'); 
+require_once('controllers/alunoController.php'); 
+$aluno = new AlunoController();
+
+if (isset($_GET['rm']) && isset($_GET['senha'])) {
+    if ($aluno -> AutenticarLogin($_GET['rm'], $_GET['senha']) == 'certo' ) {
+        header('Location: https://lockertec.azurewebsites.net/?view=homeAluno');    
+    } 
+}
+
+?> 
 
 <title>Login | Lockertec</title>
 
@@ -8,19 +18,6 @@
 <body>
 
     <?php include_once('public/navbar.php'); ?>
-
-    <?php 
-    
-    
-        $aluno = new AlunoController();
-
-        if (isset($_GET['rm']) && isset($_GET['senha'])) {
-            if ($aluno -> AutenticarLogin($_GET['rm'], $_GET['senha']) == 'certo' ) {
-                header('Location: https://lockertec.azurewebsites.net/?view=homeAluno');    
-            } 
-        }
-        
-    ?>
 
     <div class="container p-4 col-md-4" id="form-container">
         <div class="row">
