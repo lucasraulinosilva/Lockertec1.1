@@ -3,11 +3,13 @@
 <?php 
 
 
-    if ( isset($_SESSION['RM']) && isset($_SESSION['senha']) && $_SESSION['RM'] != '' && $_SESSION['senha'] != '') {
+    /*if ( isset($_SESSION['RM']) && isset($_SESSION['senha']) && $_SESSION['RM'] != '' && $_SESSION['senha'] != '') {
         
     } else {
         header('https://lockertec.azurewebsites.net/?view=login');
-    }
+    }*/
+
+    header('Location: https://lockertec.azurewebsites.net/?view=login');
 
 
 ?>
