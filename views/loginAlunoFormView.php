@@ -16,7 +16,7 @@
 
         if (isset($_GET['rm']) && isset($_GET['senha'])) {
             if ($aluno -> AutenticarLogin($_GET['rm'], $_GET['senha']) == 'certo' ) {
-                header('Location: https://lockertec.azurewebsites.net/?view=homeAluno');
+                header('Location: https://lockertec.azurewebsites.net/?view=homeAluno');    
             } 
         }
         
