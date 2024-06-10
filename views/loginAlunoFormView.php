@@ -5,7 +5,7 @@ $aluno = new AlunoController();
 
 if (isset($_GET['rm']) && isset($_GET['senha'])) {
     if ($aluno -> AutenticarLogin($_GET['rm'], $_GET['senha']) == 'certo' ) {
-        include('public/posLogin.php');
+        echo "<script>window.location='https://lockertec.azurewebsites.net/?view=homeAluno'</script>";
     } 
 }
 
