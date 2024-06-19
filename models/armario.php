@@ -45,7 +45,9 @@ class Armario {
     }
 
     public function SelecionarTodosArmarios() {
-        $armarioSelecionado = $this -> mysqli->query("SELECT * FROM armario");
+
+        include("bancoDeDados/conectarNoBancoClasse.php");
+        $armarioSelecionado = sqlsrv_query($conn, "SELECT * FROM armario");
 
         return $armarioSelecionado;
     }

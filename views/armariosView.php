@@ -51,7 +51,8 @@
 
             $armarios = $_REQUEST['armarios'];
 
-            while($row = $armarios -> fetch_array()){
+
+            while($row = sqlsrv_fetch_array($armarios, SQLSRV_FETCH_ASSOC)){
 
                 if ($row['andar'] == $_SESSION['andar'] && $row['idTamanho'] == $_SESSION['tamanho']) {
                     echo '        
