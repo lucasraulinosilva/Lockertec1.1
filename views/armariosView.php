@@ -45,14 +45,14 @@
         $controller = new ArmarioController();
 
         //$controller->SelecionarTodosArmarios();
-
+        
         if (isset($_GET['andar']) && isset($_GET['tamanho'])) {
             $controller->FiltrarArmarios($_GET['andar'], $_GET['tamanho']);
         }
 
         // PHP Data Objects(PDO) Sample Code:
         try {
-            $conn = new PDO("sqlsrv:server = tcp:testes-aplicacoes.database.windows.net,1433; Database = testes", "teste", "qwe456123!");
+            $conn = new PDO("sqlsrv:server = tcp:dadossimples.database.windows.net,1433; Database = lockertec_banco", "teste", "{your_password_here}");
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (PDOException $e) {
             print ("Error connecting to SQL Server.");
@@ -60,15 +60,11 @@
         }
 
         // SQL Server Extension Sample Code:
-        $connectionInfo = array("UID" => "teste", "pwd" => "qwe456123!", "Database" => "testes", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
-        $serverName = "tcp:testes-aplicacoes.database.windows.net,1433";
+        $connectionInfo = array("UID" => "teste", "pwd" => "{your_password_here}", "Database" => "lockertec_banco", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
+        $serverName = "tcp:dadossimples.database.windows.net,1433";
         $conn = sqlsrv_connect($serverName, $connectionInfo);
-        if ($conn === false) {
-            die(print_r(sqlsrv_errors(), true));
-        }
 
         $armarios = sqlsrv_query($conn, "SELECT * FROM armario");
-
 
 
         while ($row = sqlsrv_fetch_array($armarios, SQLSRV_FETCH_ASSOC)) {

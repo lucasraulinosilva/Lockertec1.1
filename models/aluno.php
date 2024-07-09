@@ -45,7 +45,7 @@ class Aluno
 
         // PHP Data Objects(PDO) Sample Code:
         try {
-            $conn = new PDO("sqlsrv:server = tcp:testes-aplicacoes.database.windows.net,1433; Database = testes", "teste", "qwe456123!");
+            $conn = new PDO("sqlsrv:server = tcp:dadossimples.database.windows.net,1433; Database = lockertec_banco", "teste", "{your_password_here}");
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (PDOException $e) {
             print ("Error connecting to SQL Server.");
@@ -53,12 +53,9 @@ class Aluno
         }
 
         // SQL Server Extension Sample Code:
-        $connectionInfo = array("UID" => "teste", "pwd" => "qwe456123!", "Database" => "testes", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
-        $serverName = "tcp:testes-aplicacoes.database.windows.net,1433";
+        $connectionInfo = array("UID" => "teste", "pwd" => "{your_password_here}", "Database" => "lockertec_banco", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
+        $serverName = "tcp:dadossimples.database.windows.net,1433";
         $conn = sqlsrv_connect($serverName, $connectionInfo);
-        if ($conn === false) {
-            die(print_r(sqlsrv_errors(), true));
-        }
 
         $alunoSelecionado = sqlsrv_query($conn, "SELECT * FROM aluno WHERE rm = " . $this->rm . "");
         while ($row = sqlsrv_fetch_array($alunoSelecionado, SQLSRV_FETCH_ASSOC)) {
@@ -86,7 +83,7 @@ class Aluno
 
         // PHP Data Objects(PDO) Sample Code:
         try {
-            $conn = new PDO("sqlsrv:server = tcp:testes-aplicacoes.database.windows.net,1433; Database = testes", "teste", "qwe456123!");
+            $conn = new PDO("sqlsrv:server = tcp:dadossimples.database.windows.net,1433; Database = lockertec_banco", "teste", "{your_password_here}");
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (PDOException $e) {
             print ("Error connecting to SQL Server.");
@@ -94,17 +91,14 @@ class Aluno
         }
 
         // SQL Server Extension Sample Code:
-        $connectionInfo = array("UID" => "teste", "pwd" => "qwe456123!", "Database" => "testes", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
-        $serverName = "tcp:testes-aplicacoes.database.windows.net,1433";
+        $connectionInfo = array("UID" => "teste", "pwd" => "{your_password_here}", "Database" => "lockertec_banco", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
+        $serverName = "tcp:dadossimples.database.windows.net,1433";
         $conn = sqlsrv_connect($serverName, $connectionInfo);
-        if ($conn === false) {
-            die(print_r(sqlsrv_errors(), true));
-        }
 
         $params = array();
-        $options =  array( 'Scrollable' => SQLSRV_CURSOR_KEYSET );
+        $options = array('Scrollable' => SQLSRV_CURSOR_KEYSET);
 
-        $alunoSelecionado = sqlsrv_query($conn, "SELECT * FROM aluno WHERE rm = ".$this -> rm." AND senha = '".$this -> senha."'", $params, $options);
+        $alunoSelecionado = sqlsrv_query($conn, "SELECT * FROM aluno WHERE rm = " . $this->rm . " AND senha = '" . $this->senha . "'", $params, $options);
         while ($row = sqlsrv_fetch_array($alunoSelecionado, SQLSRV_FETCH_ASSOC)) {
             $this->idAluno = $row['idAluno'];
             $this->rm = $row['rm'];
@@ -117,7 +111,7 @@ class Aluno
             $this->senha = $row['senha'];
         }
         $linhas = sqlsrv_num_rows($alunoSelecionado);
-        
+
         if ($linhas == false) {
             return 'errado';
         } else {
